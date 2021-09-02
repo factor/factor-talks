@@ -3,7 +3,7 @@
 USING: assocs combinators constructors eval help.markup kernel
 multiline namespaces parser sequences sequences.private slides
 vocabs.refresh words fry ;
-IN: talks.tc-lisp-talk
+IN: tc-lisp-talk
 
 CONSTANT: tc-lisp-slides
 {

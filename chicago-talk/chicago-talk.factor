@@ -1,7 +1,7 @@
 ! Copyright (C) 2009 Slava Pestov.
 ! See http://factorcode.org/license.txt for BSD license.
 USING: slides help.markup ;
-IN: talks.chicago-talk
+IN: chicago-talk
 
 CONSTANT: chicago-slides
 {

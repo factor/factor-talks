@@ -6,7 +6,7 @@ locals kernel.private help.vocabs assocs quotations urls
 peg.ebnf tools.annotations tools.crossref help.topics
 math.functions compiler.tree.optimizer compiler.cfg.optimizer
 fry ;
-IN: talks.vpri-talk
+IN: vpri-talk
 
 CONSTANT: vpri-slides
 {
@@ -273,7 +273,7 @@ CONSTANT: vpri-slides
         "Help markup is just literal data"
         { "Look at the help for " { $link T{ link f + } } }
         "These slides are built with the help system and a custom style sheet"
-        { $vocab-link "talks.vpri-talk" }
+        { $vocab-link "vpri-talk" }
     }
     { $slide "Some line counts"
         "VM: 12,000 lines of C"

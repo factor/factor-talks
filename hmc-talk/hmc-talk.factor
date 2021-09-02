@@ -1,6 +1,6 @@
 USING: fry help.markup help.topics kernel locals math
 math.functions memoize peg.ebnf slides ;
-IN: talks.hmc-talk
+IN: hmc-talk
 
 CONSTANT: hmc-slides
 {
@@ -35,14 +35,14 @@ CONSTANT: hmc-slides
 
     { $slide "Words and the stack"
         { $code
-            "\"/usr/local/opt/fortune/share/games/fortunes/science\""
+            "\"/opt/homebrew/share/games/fortunes/science\""
             "ascii file-lines"
             "{ \"%\" } split random"
             "[ print ] each"
         }
         { $code
             ": fortune ( -- )"
-            "    \"/usr/local/opt/fortune/share/games/fortunes/science\""
+            "    \"/opt/homebrew/share/games/fortunes/science\""
             "    ascii file-lines"
             "    { \"%\" } split random"
             "    [ print ] each ;"
@@ -253,7 +253,7 @@ CONSTANT: hmc-slides
         "Help markup is just literal data"
         { "Look at the help for " { $link T{ link f + } } }
         "These slides are built with the help system and a custom style sheet"
-        { $vocab-link "talks.hmc-talk" }
+        { $vocab-link "hmc-talk" }
     }
     { $slide "Why stack-based?"
         "Because nobody else is doing it"
