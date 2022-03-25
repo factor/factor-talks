@@ -10,6 +10,7 @@ CONSTANT: svfig-slides
         "Influenced by Forth, Lisp, and Smalltalk"
         "Blurs the line between language and library"
         "Interactive development"
+        "Upcoming release: 0.99, then... 0.100?"
     }
 
     { $slide "Concepts"
@@ -19,6 +20,7 @@ CONSTANT: svfig-slides
         "Fully-compiled"
         "Cross-platform"
         "Clickable"
+        "Useful?"
     }
 
     { $slide "Concatenative"
@@ -36,6 +38,7 @@ CONSTANT: svfig-slides
         { $code ": palindrome? ( string -- ? ) dup reverse = ;" }
         "Unit tests"
         { $code "{ f } [ \"hello\" palindrome? ] unit-test"
+                ""
                 "{ t } [ \"racecar\" palindrome? ] unit-test"
         }
     }
@@ -155,8 +158,10 @@ CONSTANT: svfig-slides
     }
 
     { $slide "Parsing Words - XML"
+        { $vocab-link "xml" }
+        "Implemented with library code"
+        "Useful syntax forms"
         { $code
-            "USING: sequences xml.syntax xml.writer ;"
             "{ \"three\" \"blind\" \"mice\" }"
             "[ [XML <li><-></li> XML] ] map"
             "[XML <ul><-></ul> XML]"
@@ -164,7 +169,7 @@ CONSTANT: svfig-slides
         }
     }
 
-    { $slide "Local Variabless"
+    { $slide "Local Variables"
         "Sometimes, there's no good stack solution to a problem"
         "Or, you're porting existing code in a quick-and-dirty way"
         "Combinator with 5 parameters!"
@@ -177,11 +182,11 @@ CONSTANT: svfig-slides
 
     { $slide "Local Variables"
         { $code
-            ": check-drinking-age ( age -- )"
-            "    21"
-            "    [ \"You're underage!\" print ]"
-            "    [ \"Grats, you're now legal\" print ]"
-            "    [ \"Go get hammered\" print ]"
+            ": check-voting-age ( age -- )"
+            "    18"
+            "    [ \"You're underage, sorry...\" print ]"
+            "    [ \"Yay, register to vote!\" print ]"
+            "    [ \"Participate in democracy!\" print ]"
             "    branch ;"
         }
         "Locals are entirely implemented in Factor"
@@ -197,6 +202,7 @@ CONSTANT: svfig-slides
     }
 
     { $slide "Assembly"
+        "Access the Time Stamp Counter"
         { $code
 "HOOK: rdtsc cpu ( -- n )
 
@@ -252,16 +258,17 @@ SYNOPSIS
     }
 
     { $slide "Profiling"
-        "Not tail recursive"
-        "Call tree is huge"
         { $code
             ": fib ( m -- n )"
             "    dup 1 > ["
             "        [ 1 - fib ] [ 2 - fib ] bi +"
             "    ] when ;"
         }
+        { $code "[ 40 fib ] time" }
         "Very slow! Let's profile it..."
         { $code "[ 40 fib ] profile" }
+        "Not tail recursive"
+        "Call tree is huge"
     }
 
     { $slide "Profiling - Typed"
@@ -284,6 +291,8 @@ SYNOPSIS
             "    ] when ;"
         }
         "Much faster"
+        { $code "30,000 fib number>string "
+                "80 group [ print ] each" }
     }
 
     { $slide "Macros"
@@ -293,6 +302,7 @@ SYNOPSIS
         { $code "MACRO: ndup ( n -- quot )"
                 "    [ \\ dup ] [ ] replicate-as ;"
         }
+        { $code "[ 5 ndup ] infer" }
         { $code "[ 5 ndup ] expand-macros" }
     }
 
@@ -309,6 +319,7 @@ SYNOPSIS
         "A tuple is a user-defined class which holds named values."
         { $code
             "TUPLE: rectangle width height ;"
+            ""
             "TUPLE: circle radius ;"
         }
     }
@@ -320,6 +331,7 @@ SYNOPSIS
         "Let's encapsulate:"
         { $code
             ": <rectangle> ( w h -- r ) rectangle boa ;"
+            ""
             ": <circle> ( r -- c ) circle boa ;"
         }
     }
@@ -329,8 +341,6 @@ SYNOPSIS
         { $code "GENERIC: area ( shape -- n )" }
         "Two methods:"
         { $code
-            "USE: math.constants"
-            ""
             "M: rectangle area"
             "    [ width>> ] [ height>> ] bi * ;"
             ""
@@ -361,8 +371,9 @@ SYNOPSIS
                 "        { [ 2dup beats? ] [ \"WIN\" ] }"
                 "        { [ 2dup = ] [ \"TIE\" ] }"
                 "        [ \"LOSE\" ]"
-                "    } cond \"%s vs. %s: %s\n\" printf ;"
+                "    } cond \"%s vs. %s: %s\\n\" printf ;"
         }
+        "A simple interface:"
         { $code ": rock ( -- ) \\ rock play. ;"
                 ": paper ( -- ) \\ paper play. ;"
                 ": scissors ( -- ) \\ scissors play. ;"
@@ -392,15 +403,18 @@ SYNOPSIS
         }
     }
     { $slide "Object System"
-        "More: inheritance, type declarations, read-only slots, union, intersection, singleton classes, reflection"
+        "And lots more features..."
+        "Inheritance, type declarations, read-only slots, union, intersection, singleton classes, reflection"
         "Object system is entirely implemented in Factor"
     }
 
     { $slide "Implementation"
         "VM in C++ (12,000 lines of code)"
+        "VM features primitives, garbage collection, etc."
         "Lines of code: 300,000"
         "Lines of tests: 80,000"
         "Lines of docs: 70,000"
+        "One big repository, and we love contributions!"
     }
 
     { $slide "Project Infrastructure"
