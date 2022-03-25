@@ -201,38 +201,6 @@ CONSTANT: svfig-slides
         { $code "\"cat\ndog\nfish\" [ readln ] with-string-reader" }
     }
 
-    { $slide "Assembly"
-        "Access the Time Stamp Counter"
-        { $code
-"HOOK: rdtsc cpu ( -- n )
-
-M: x86.32 rdtsc
-    longlong { } cdecl [
-        RDTSC
-    ] alien-assembly ;
-
-M: x86.64 rdtsc
-    longlong { } cdecl [
-        RAX 0 MOV
-        RDTSC
-        RDX 32 SHL
-        RAX RDX OR
-    ] alien-assembly ;" }
-    }
-
-    { $slide "FFI"
-        { $code "NAME
-     sqrt – square root function
-
-SYNOPSIS
-     #include <math.h>
-
-     double
-     sqrt(double x);" }
-        "Let's use it!"
-        { $code "FUNCTION: double sqrt ( double x )" }
-    }
-
     { $slide "Destructors"
         "Deterministic resource disposal"
         "Any step can fail and we don't want to leak resources"
@@ -243,17 +211,6 @@ SYNOPSIS
         256 malloc &free
         ... work goes here ...
     ] with-destructors ;"
-        }
-    }
-
-    { $slide "Infix"
-        { "Syntax experiments with " { $vocab-link "infix" } }
-        "Infix word definitions:"
-        { $code "INFIX:: foo ( x y -- z ) sqrt(x)+y**3 ;" }
-        "Inline also:"
-        { $code "[let \"hello\" :> seq"
-                "    [infix seq[::-1] infix]"
-                "]"
         }
     }
 
@@ -359,9 +316,9 @@ SYNOPSIS
                 "GENERIC: beats? ( obj1 obj2 -- ? )"
                 ""
                 "METHOD: beats? { scissors paper } 2drop t ;"
-                "METHOD: beats? { rock scissors } 2drop t ;"
-                "METHOD: beats? { paper rock } 2drop t ;"
-                "METHOD: beats? { object object } 2drop f ;"
+                "METHOD: beats? { rock  scissors } 2drop t ;"
+                "METHOD: beats? { paper     rock } 2drop t ;"
+                "METHOD: beats? { object  object } 2drop f ;"
         }
     }
 
@@ -408,6 +365,49 @@ SYNOPSIS
         "Object system is entirely implemented in Factor"
     }
 
+    { $slide "Assembly"
+        "Access the Time Stamp Counter"
+        { $code
+"HOOK: rdtsc cpu ( -- n )
+
+M: x86.32 rdtsc
+    longlong { } cdecl [
+        RDTSC
+    ] alien-assembly ;
+
+M: x86.64 rdtsc
+    longlong { } cdecl [
+        RAX 0 MOV
+        RDTSC
+        RDX 32 SHL
+        RAX RDX OR
+    ] alien-assembly ;" }
+    }
+
+    { $slide "FFI"
+        { $code "NAME
+     sqrt – square root function
+
+SYNOPSIS
+     #include <math.h>
+
+     double
+     sqrt(double x);" }
+        "Let's use it!"
+        { $code "FUNCTION: double sqrt ( double x )" }
+    }
+
+    { $slide "Infix"
+        { "Syntax experiments with " { $vocab-link "infix" } }
+        "Infix word definitions:"
+        { $code "INFIX:: foo ( x y -- z ) sqrt(x)+y**3 ;" }
+        "Inline also:"
+        { $code "[let \"hello\" :> seq"
+                "    [infix seq[::-1] infix]"
+                "]"
+        }
+    }
+
     { $slide "Implementation"
         "VM in C++ (12,000 lines of code)"
         "VM features primitives, garbage collection, etc."
@@ -432,6 +432,10 @@ SYNOPSIS
         "Builds Factor and all libraries, runs tests, makes binaries"
         "Saves us from the burden of making releases by hand"
         "Maintains stability"
+    }
+
+    { $slide "Demo"
+        "Let's look at a real program!"
     }
 
     { $slide "Questions"
