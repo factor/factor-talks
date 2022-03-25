@@ -370,11 +370,6 @@ CONSTANT: svfig-slides
         { $code
 "HOOK: rdtsc cpu ( -- n )
 
-M: x86.32 rdtsc
-    longlong { } cdecl [
-        RDTSC
-    ] alien-assembly ;
-
 M: x86.64 rdtsc
     longlong { } cdecl [
         RAX 0 MOV
