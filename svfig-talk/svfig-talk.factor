@@ -29,6 +29,7 @@ CONSTANT: svfig-slides
         { $code "\"hello\" rot13 ." }
         { $code "URL\" https://factorcode.org\" http-get" }
         { $code "10 [ \"Hello, Factor\" print ] times" }
+        { $code "{ 4 8 15 16 23 42 } [ sum ] [ length ] bi / ." }
     }
 
     { $slide "Words"
@@ -61,7 +62,7 @@ CONSTANT: svfig-slides
     { $slide "Debugging Tools"
         { "Let's implement the " { $snippet "fortune" } " program" }
         { $code
-            "\"/opt/homebrew/share/games/fortunes/science\""
+            "\"/usr/local/share/games/fortunes/science\""
             "ascii file-lines"
             "{ \"%\" } split random"
             "[ print ] each"
@@ -80,13 +81,14 @@ CONSTANT: svfig-slides
             "        ] each-stream-block-slice"
             "    ] with-disposal ;"
         }
+        { $code "[ \"factor.image\" simple-wc ] time" }
     }
 
     { $slide "Native Performance"
         "But it can be even faster!"
         { $code
             "USE: tools.wc"
-            "\"factor.image\" wc ."
+            "[ \"factor.image\" wc ] time"
         }
         "Deploy as binary"
         { $code "\"tools.wc\" deploy" }
@@ -119,7 +121,7 @@ CONSTANT: svfig-slides
         "Programming is hard, let's play tetris"
         { $vocab-link "tetris" }
         "Tetris is hard too... let's cheat"
-        { $code "\"tetris.tetromino\" edit-vocab" }
+        { $code "\"tetris.tetromino\" edit" }
         { "Factor workflow: change code, " { $snippet "F2" } ", test, repeat" }
     }
 
@@ -143,7 +145,8 @@ CONSTANT: svfig-slides
     { $slide "Parsing Words - Dice"
         { $vocab-link "dice" }
         { $code "ROLL: 2d8+5"
-                "\"You do %s points of damage!\" printf" }
+                ""
+                "\"You do %s points of damage!\\n\" printf" }
         { $code "\\ ROLL: see" }
         { $code "[ ROLL: 2d8+5 ] ." }
     }
@@ -152,7 +155,6 @@ CONSTANT: svfig-slides
         { $vocab-link "regexp" }
         "Pre-compiles regexp at parse time"
         "Implemented with library code"
-        { $code "USE: regexp" }
         { $code "\"ababbc\" \"[ab]+c\" <regexp> matches? ." }
         { $code "\"ababbc\" R/ [ab]+c/ matches? ." }
     }
@@ -198,7 +200,10 @@ CONSTANT: svfig-slides
         "Implemented as a stack of hashtables"
         { "Useful words are " { $link get } ", " { $link set } }
         "Input, output, error streams are stored in dynamic variables"
-        { $code "\"cat\ndog\nfish\" [ readln ] with-string-reader" }
+        "Read from a string..."
+        { $code "\"cat\\ndog\\nfish\" [ readln ] with-string-reader" }
+        "Read from a file..."
+        { $code "\"LICENSE.txt\" utf8 [ readln ] with-file-reader" }
     }
 
     { $slide "Destructors"
@@ -248,7 +253,7 @@ CONSTANT: svfig-slides
             "    ] when ;"
         }
         "Much faster"
-        { $code "30,000 fib number>string "
+        { $code "10,000 fib number>string "
                 "80 group [ print ] each" }
     }
 
@@ -267,7 +272,9 @@ CONSTANT: svfig-slides
         { { $link POSTPONE: EBNF: } ": a complex parsing word" }
         "Implements a custom syntax for expressing parsers"
         { "Example: " { $vocab-link "printf" } }
-        { $code "\"Factor\" 2003 <year> ago duration>years"
+        { $code "\"Factor\""
+                "2003 <year> ago duration>years"
+                ""
                 "\"%s is %d years old\\n\" printf" }
         { $code "[ \"%s monkeys\" printf ] expand-macros" }
     }
@@ -294,7 +301,7 @@ CONSTANT: svfig-slides
     }
 
     { $slide "Single Dispatch"
-        "Generic words and methods"
+        ! "Generic words and methods"
         { $code "GENERIC: area ( shape -- n )" }
         "Two methods:"
         { $code
@@ -323,6 +330,7 @@ CONSTANT: svfig-slides
     }
 
     { $slide "Multiple Dispatch"
+        "Let's play a game..."
         { $code ": play. ( obj -- )"
                 "    { rock paper scissors } random {"
                 "        { [ 2dup beats? ] [ \"WIN\" ] }"
@@ -330,7 +338,7 @@ CONSTANT: svfig-slides
                 "        [ \"LOSE\" ]"
                 "    } cond \"%s vs. %s: %s\\n\" printf ;"
         }
-        "A simple interface:"
+        "With a simple interface:"
         { $code ": rock ( -- ) \\ rock play. ;"
                 ": paper ( -- ) \\ paper play. ;"
                 ": scissors ( -- ) \\ scissors play. ;"
@@ -352,7 +360,7 @@ CONSTANT: svfig-slides
             "PREDICATE: positive < integer 0 > ;"
             "PREDICATE: negative < integer 0 < ;"
             ""
-            "GENERIC: abs ( n -- )"
+            "GENERIC: abs ( m -- n )"
             ""
             "M: positive abs ;"
             "M: negative abs -1 * ;"
@@ -413,11 +421,11 @@ SYNOPSIS
     }
 
     { $slide "Project Infrastructure"
-        { $url "http://factorcode.org" }
-        { $url "http://concatenative.org" }
-        { $url "http://docs.factorcode.org" }
-        { $url "http://planet.factorcode.org" }
-        { $url "http://paste.factorcode.org" }
+        { $url "https://factorcode.org" }
+        { $url "https://concatenative.org" }
+        { $url "https://docs.factorcode.org" }
+        { $url "https://planet.factorcode.org" }
+        { $url "https://paste.factorcode.org" }
         "Uses our HTTP server, SSL, DB, Atom libraries..."
     }
 
@@ -430,13 +438,10 @@ SYNOPSIS
     }
 
     { $slide "Demo"
-        "Let's look at a real program!"
-    }
-
-    { $slide "Questions"
         "It is hard to cover everything in a single talk"
         "Factor has many cool things that I didn't talk about"
-        "Questions?"
+        { $code "\"demos\" run" }
+        "Let's look at a real program!"
     }
 
     { $slide "Cool Things"
