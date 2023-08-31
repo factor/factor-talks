@@ -1,5 +1,5 @@
 ! Copyright (C) 2008 Slava Pestov.
-! See http://factorcode.org/license.txt for BSD license.
+! See https://factorcode.org/license.txt for BSD license.
 USING: slides help.markup math arrays hashtables namespaces
 kernel sequences parser memoize io.encodings.binary
 locals kernel.private help.vocabs assocs quotations urls
@@ -11,7 +11,7 @@ IN: vpri-talk
 CONSTANT: vpri-slides
 {
     { $slide "Factor!"
-        { $url "http://factorcode.org" }
+        { $url "https://factorcode.org" }
         "Development started in 2003"
         "Open source (BSD license)"
         "Influenced by Forth, Lisp, and Smalltalk"
@@ -442,10 +442,10 @@ CONSTANT: vpri-slides
         "Got rid of interpreter"
     }
     { $slide "Project infrastructure"
-        { $url "http://factorcode.org" }
-        { $url "http://concatenative.org" }
-        { $url "http://docs.factorcode.org" }
-        { $url "http://planet.factorcode.org" }
+        { $url "https://factorcode.org" }
+        { $url "https://concatenative.org" }
+        { $url "https://docs.factorcode.org" }
+        { $url "https://planet.factorcode.org" }
         "Uses our HTTP server, SSL, DB, Atom libraries..."
     }
     { $slide "Project infrastructure"

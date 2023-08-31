@@ -1,12 +1,12 @@
 ! Copyright (C) 2009 Slava Pestov.
-! See http://factorcode.org/license.txt for BSD license.
+! See https://factorcode.org/license.txt for BSD license.
 USING: slides help.markup ;
 IN: chicago-talk
 
 CONSTANT: chicago-slides
 {
     { $slide "factor"
-      { $url "http://factorcode.org" }
+      { $url "https://factorcode.org" }
     }
     { $slide "goals"
       "high level language"

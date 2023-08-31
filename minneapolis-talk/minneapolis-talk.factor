@@ -170,7 +170,7 @@ CONSTANT: minneapolis-slides
         "Factor development began in 2003"
         "About a dozen contributors"
         "Handful of \"core contributors\""
-        { "Web site: " { $url "http://factorcode.org" } }
+        { "Web site: " { $url "https://factorcode.org" } }
         "IRC: #concatenative on irc.freenode.net"
         "Mailing list: factor-talk@lists.sf.net"
     }

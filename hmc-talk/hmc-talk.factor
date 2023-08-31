@@ -5,7 +5,7 @@ IN: hmc-talk
 CONSTANT: hmc-slides
 {
     { $slide "Factor!"
-        { $url "http://factorcode.org" }
+        { $url "https://factorcode.org" }
         "Development started in 2003"
         "Open source (BSD license)"
         "Influenced by Forth, Lisp, and Smalltalk"
@@ -313,11 +313,11 @@ CONSTANT: hmc-slides
     }
 
     { $slide "Project infrastructure"
-        { $url "http://factorcode.org" }
-        { $url "http://concatenative.org" }
-        { $url "http://docs.factorcode.org" }
-        { $url "http://planet.factorcode.org" }
-        { $url "http://paste.factorcode.org" }
+        { $url "https://factorcode.org" }
+        { $url "https://concatenative.org" }
+        { $url "https://docs.factorcode.org" }
+        { $url "https://planet.factorcode.org" }
+        { $url "https://paste.factorcode.org" }
         "Uses our HTTP server, SSL, DB, Atom libraries..."
     }
     { $slide "Project infrastructure"
@@ -378,7 +378,7 @@ CONSTANT: hmc-slides
             "\"hello\" play-as-morse"
         }
         { $code
-            "USE flip-text"
+            "USE: flip-text"
             "\"hello\" flip-text ."
         }
     }

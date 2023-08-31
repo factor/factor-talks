@@ -1,5 +1,5 @@
 ! Copyright (C) 2008 Slava Pestov.
-! See http://factorcode.org/license.txt for BSD license.
+! See https://factorcode.org/license.txt for BSD license.
 USING: slides help.markup math arrays hashtables namespaces
 kernel sequences parser memoize io.encodings.binary
 locals kernel.private help.vocabs assocs quotations
@@ -11,7 +11,7 @@ IN: google-tech-talk
 CONSTANT: google-slides
 {
     { $slide "Factor!"
-        { $url "http://factorcode.org" }
+        { $url "https://factorcode.org" }
         "Development started in 2003"
         "Open source (BSD license)"
         "First result for \"Factor\" on Google :-)"
@@ -297,7 +297,7 @@ CONSTANT: google-slides
     }
     { $slide "The parser"
         { "Example: URLs define a " { $link POSTPONE: URL" } " word" }
-        { $code "URL\" http://paste.factorcode.org/paste?id=81\"" }
+        { $code "URL\" https://paste.factorcode.org/paste?id=81\"" }
     }
     { $slide "Example: memoization"
         { "Memoization with " { $link POSTPONE: MEMO: } }
@@ -523,10 +523,10 @@ CONSTANT: google-slides
         "Mark sweep for native code"
     }
     { $slide "Project infrastructure"
-        { $url "http://factorcode.org" }
-        { $url "http://concatenative.org" }
-        { $url "http://docs.factorcode.org" }
-        { $url "http://planet.factorcode.org" }
+        { $url "https://factorcode.org" }
+        { $url "https://concatenative.org" }
+        { $url "https://docs.factorcode.org" }
+        { $url "https://planet.factorcode.org" }
         "Uses our HTTP server, SSL, DB, Atom libraries..."
     }
     { $slide "Project infrastructure"

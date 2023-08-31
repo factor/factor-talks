@@ -1,5 +1,5 @@
 ! Copyright (C) 2009 Doug Coleman.
-! See http://factorcode.org/license.txt for BSD license.
+! See https://factorcode.org/license.txt for BSD license.
 USING: assocs combinators constructors eval help.markup kernel
 multiline namespaces parser sequences sequences.private slides
 vocabs.refresh words fry ;
@@ -8,7 +8,7 @@ IN: tc-lisp-talk
 CONSTANT: tc-lisp-slides
 {
     { $slide "Factor!"
-        { $url "http://factorcode.org" }
+        { $url "https://factorcode.org" }
         "Development started in 2003"
         "Open source (BSD license)"
         "Influenced by Forth, Lisp, and Smalltalk"

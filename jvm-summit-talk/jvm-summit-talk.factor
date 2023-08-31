@@ -1,5 +1,5 @@
 ! Copyright (C) 2009 Slava Pestov.
-! See http://factorcode.org/license.txt for BSD license.
+! See https://factorcode.org/license.txt for BSD license.
 USING: slides help.markup math math.private kernel sequences
 slots.private ;
 IN: jvm-summit-talk
@@ -11,7 +11,7 @@ CONSTANT: jvm-summit-slides
         "We want a language for anything from scripting DSLs to high-performance numerics"
         "I assume you know a bit about compiler implementation: parser -> frontend -> optimizer -> codegen"
         { "This is " { $strong "not" } " a talk about the Factor language" }
-        { "Go to " { $url "http://factorcode.org" } " to learn the language" }
+        { "Go to " { $url "https://factorcode.org" } " to learn the language" }
     }
     { $slide "Why are dynamic languages slow?"
         "Branching and indirection!"

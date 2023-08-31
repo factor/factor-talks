@@ -489,7 +489,7 @@ SYNOPSIS
             "\"hello\" play-as-morse"
         }
         { $code
-            "USE flip-text"
+            "USE: flip-text"
             "\"hello\" flip-text ."
         }
         { $code
