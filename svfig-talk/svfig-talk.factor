@@ -533,7 +533,7 @@ SYNOPSIS
         }
     }
 
-    { $slide "Cool things"
+    { $slide "Cool Things"
         { $code "./factor -run=file-server" }
         { $code "./factor -run=file-monitor" }
         { $code "./factor -run=tools.dns microsoft.com" }

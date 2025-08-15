@@ -334,7 +334,7 @@ CONSTANT: hmc-slides
         "Questions?"
     }
 
-    { $slide "Cool things"
+    { $slide "Cool Things"
         { $code
             "USE: xkcd"
             "XKCD: 138"
@@ -345,13 +345,13 @@ CONSTANT: hmc-slides
         }
     }
 
-    { $slide "Cool things"
+    { $slide "Cool Things"
         { $vocab-link "minesweeper" }
         { $vocab-link "game-of-life" }
         { $vocab-link "boids" }
     }
 
-    { $slide "Cool things"
+    { $slide "Cool Things"
         "8080 cpu emulator"
         { $code
             "\"resource:roms\" rom-root set-global"
@@ -359,7 +359,7 @@ CONSTANT: hmc-slides
         { $vocab-link "roms.space-invaders" }
     }
 
-    { $slide "Cool things"
+    { $slide "Cool Things"
         { $vocab-link "bloom-filters" }
         { $vocab-link "cuckoo-filters" }
         { $vocab-link "persistent" }
@@ -368,7 +368,7 @@ CONSTANT: hmc-slides
         { $vocab-link "specialized-arrays" }
     }
 
-    { $slide "Cool things"
+    { $slide "Cool Things"
         { $code
             "USE: text-to-speech"
             "\"hello\" speak-text"
@@ -383,7 +383,7 @@ CONSTANT: hmc-slides
         }
     }
 
-    { $slide "Cool things"
+    { $slide "Cool Things"
         { $code
             "{ 12 18 24 72 }"
             "[ \"Bigger\" swap font-size associate format nl ] each"
@@ -398,7 +398,7 @@ CONSTANT: hmc-slides
         }
     }
 
-    { $slide "Cool things"
+    { $slide "Cool Things"
         { $code
             "USE: google.charts"
             "\"x = \\\\frac{-b \\\\pm \\\\sqrt {b^2-4ac}}{2a}\""
@@ -420,7 +420,7 @@ CONSTANT: hmc-slides
         }
     }
 
-    { $slide "Cool things"
+    { $slide "Cool Things"
         { $code
             "USE: http.client"
             "\\ http-get see"
@@ -434,7 +434,7 @@ CONSTANT: hmc-slides
         }
     }
 
-    { $slide "Cool things"
+    { $slide "Cool Things"
         "Tab completion"
         { $code
             "http"
@@ -447,7 +447,7 @@ CONSTANT: hmc-slides
         }
     }
 
-    { $slide "Cool things"
+    { $slide "Cool Things"
         { $code
             "USE: emojify"
             "\"I :heart: Factor! :+1!\" emojify ."
@@ -459,7 +459,7 @@ CONSTANT: hmc-slides
         }
     }
 
-    { $slide "Cool things"
+    { $slide "Cool Things"
         { $code
             "USING: sequences xml.syntax xml.writer ;"
             "{ \"three\" \"blind\" \"mice\" }"
@@ -469,7 +469,7 @@ CONSTANT: hmc-slides
         }
     }
 
-    { $slide "Cool things"
+    { $slide "Cool Things"
         { $code
             "USE: io.streams.256color"
             "[ listener ] with-256color"
@@ -477,7 +477,7 @@ CONSTANT: hmc-slides
         }
     }
 
-    { $slide "Cool things"
+    { $slide "Cool Things"
         { $code "./factor -run=tetris" }
         { $code "./factor -run=file-server" }
         { $code "./factor -run=file-monitor" }
